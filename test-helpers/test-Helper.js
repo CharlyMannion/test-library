@@ -7,8 +7,14 @@ var assert = {
   },
   isEqual: function(resultToCheck, expectedResult) {
     if (resultToCheck != expectedResult) {
-      throw new Error("Assertion failed: " + resultToCheck + " is not equal to " + expectedResult);
+      throw new Error("Test failed: " + resultToCheck + " is not equal to " + expectedResult);
     }
-    console.log("Assertion passed: " + resultToCheck + " is equal to " + expectedResult)
-  }
+    console.log("Test passed: " + resultToCheck + " is equal to " + expectedResult)
+  },
+  // contains: function(resultToCheck, resultContainer) {
+  //   if (resultContainer.includes(resultToCheck) = false) {
+  //     throw new Error("Test failed: " + resultContainer + " does not contain " + resultToCheck);
+  //   }
+  //   console.log("Test passed: " + resultContainer + " contains " + resultToCheck)
+  // }
 };
