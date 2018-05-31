@@ -1,20 +1,47 @@
+var consoleGreen = (testText) => {
+  console.log(`%c${testText}`, "color: green; text-decoration: underline")
+}
+var consoleRed = (testText) => {
+  console.log(`%c${testText}`, "color: red; font-weight: bold")
+}
+
 var assert = {
-  isTrue: function(assertionToCheck) {
+  isTrue: (assertionToCheck) => {
     if (!assertionToCheck) {
-      throw new Error("Assertion failed: " + assertionToCheck + " is not truthy");
+      throw new Error(`Test failed: ${assertionToCheck} is not truthy`)
     }
-    console.log("Assertion passed: " + assertionToCheck + " is truthy")
+    consoleGreen(`Test passed: ${assertionToCheck} is truthy`)
   },
-  isEqual: function(resultToCheck, expectedResult) {
+  isEqual: (resultToCheck, expectedResult) => {
     if (resultToCheck != expectedResult) {
-      throw new Error("Test failed: " + resultToCheck + " is not equal to " + expectedResult);
+      throw new Error(`Test failed: ${resultToCheck} didn't equal ${expectedResult}`)
     }
-    console.log("Test passed: " + resultToCheck + " is equal to " + expectedResult)
+    consoleGreen(`Test passed: ${resultToCheck} is equal to ${expectedResult}`)
   },
-  // contains: function(resultToCheck, resultContainer) {
-  //   if (resultContainer.includes(resultToCheck) = false) {
-  //     throw new Error("Test failed: " + resultContainer + " does not contain " + resultToCheck);
-  //   }
-  //   console.log("Test passed: " + resultContainer + " contains " + resultToCheck)
-  // }
-};
+  isEmpty: (resultToCheck) => {
+    if (!(Object.keys(resultToCheck).length === 0)) {
+      throw new Error(`Test failed: object is not empty`)
+    }
+    consoleGreen(`Test passed: object is empty`)
+  },
+  contains: (container, resultToFind) => {
+    consoleRed('WARNING: "contains()" is no longer advised, use "arrayContains()" instead')
+
+    if (!(container.includes(resultToFind))) {
+      throw new Error(`Test failed: ${resultToFind} is not in ${container}`)
+    }
+    consoleGreen(`Test passed: ${resultToFind} is in ${container}`)
+  },
+  isAnArray: (object) => {
+    if (!(Array.isArray(object))) {
+      throw new Error(`Test failed: ${object} is not an array`)
+    }
+    consoleGreen(`Test passed: ${object} is an array`)
+  },
+  arrayContains: (container, resultToFind) => {
+    if (!(container.includes(resultToFind))) {
+      throw new Error(`Test failed: ${resultToFind} is not in ${container}`)
+    }
+    consoleGreen(`Test passed: ${resultToFind} is in ${container}`)
+  }
+}
