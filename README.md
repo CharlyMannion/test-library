@@ -1,6 +1,8 @@
 # Test-Library
 
-Javascript testing library.
+A Javascript testing library.
+
+Please note: this library is currently under development.
 
 ## Getting Started
 * clone this repository
