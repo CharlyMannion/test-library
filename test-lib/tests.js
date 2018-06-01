@@ -1,3 +1,5 @@
+console.log(spyOn())
+
 var testReturnValues = new TestReturnValues()
 
 function assertionIsTrue() {
@@ -42,9 +44,9 @@ function methodExists() {
 
 methodExists()
 
-function spyOn() {
+function spyOnObject() {
   spyOn(testReturnValues, 'tester')
   testReturnValues.callTester()
 };
 
-spyOn()
+spyOnObject()
