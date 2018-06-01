@@ -41,3 +41,10 @@ function methodExists() {
 };
 
 methodExists()
+
+function spyOn() {
+  spyOn(testReturnValues, 'tester')
+  testReturnValues.callTester()
+};
+
+spyOn()

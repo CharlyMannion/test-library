@@ -53,3 +53,13 @@ let respondsTo = (placeholderFunction, callback) => {
     consoleRed(error)
   }
 }
+
+let spyOn = (placeholderFunkyObject, placeholderFunkyFunction) => {
+  try {
+    placeholderFunkyObject[placeholderFunkyFunction] = function () {
+      console.log(`${placeholderFunkyFunction} has been called`)
+    }
+  } catch (error) {
+    console.log(error)
+  }
+}
