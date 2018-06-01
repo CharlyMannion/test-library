@@ -1,5 +1,3 @@
-console.log(spyOn())
-
 var testReturnValues = new TestReturnValues()
 
 function assertionIsTrue() {
