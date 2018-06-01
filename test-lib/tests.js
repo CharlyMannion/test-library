@@ -26,7 +26,7 @@ objectDoesContain()
 
 function objectIsAnArray() {
   assert.isAnArray(testReturnValues.anArray)
-}
+};
 
 objectIsAnArray()
 
@@ -35,3 +35,9 @@ function arrayDoesContain() {
 };
 
 arrayDoesContain()
+
+function methodExists() {
+  respondsTo(testReturnValues, 'tester')
+};
+
+methodExists()

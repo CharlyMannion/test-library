@@ -45,3 +45,11 @@ var assert = {
     consoleGreen(`Test passed: ${resultToFind} is in ${container}`)
   }
 }
+
+let respondsTo = (placeholderFunction, callback) => {
+  try {
+    callback in placeholderFunction ? consoleGreen(`${callback} exists`) : consoleRed(`${callback} does not exist`)
+  } catch (error) {
+    consoleRed(error)
+  }
+}
